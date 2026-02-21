@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Havan Booking</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #fefefe;
+    }
+    .hero {
+        text-align: center;
+        padding: 40px 20px;
+        background: #fff;
+    }
+    .hero img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border: 6px solid #222;
+        object-fit: cover;
+    }
+    .btn {
+        display: inline-block;
+        background: #ff4500;
+        color: white;
+        padding: 14px 28px;
+        margin: 15px 5px;
+        font-size: 18px;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: 0.3s ease;
+    }
+    .btn:hover {
+        background: #e03f00;
+    }
+    .form-section {
+        max-width: 450px;
+        margin: 30px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #fafafa;
+    }
+    .form-section input, .form-section textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #aaa;
+        border-radius: 6px;
+    }
+    .form-section label {
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<!-- HERO / PHOTO -->
+<div class="hero">
+    <img src="https://raw.githubusercontent.com/ajayprajapati008/Mahaveer-Vaishnav-/main/profile.jpg" alt="Profile Photo">
+    <h1>हवन बुकिंग सेवा</h1>
+    <p>नि: शुल्क सलाह और ऑनलाइन पेमेंट विकल्प</p>
+    <a href="https://wa.me/917999851859?text=नमस्ते%2C%20मुझे%20हवन%20बुक%20करनी%20है" class="btn">📲 Booking Now</a>
+</div>
+
+<!-- REGISTER FORM -->
+<div class="form-section">
+    <h2>📋 Register Now</h2>
+    <form onsubmit="sendWhatsApp(event)">
+        <label>नाम</label>
+        <input type="text" id="name" placeholder="आपका नाम" required>
+
+        <label>मोबाइल नंबर</label>
+        <input type="text" id="mobile" placeholder="आपका नंबर" required>
+
+        <label>हवन प्रकार</label>
+        <input type="text" id="type" placeholder="हवन का नाम" required>
+
+        <label>तारीख</label>
+        <input type="date" id="date" required>
+
+        <label>अतिरिक्त जानकारी</label>
+        <textarea id="message" placeholder="कोई सूचना"></textarea>
+
+        <button type="submit" class="btn">WhatsApp पर भेजें</button>
+    </form>
+</div>
+
+<script>
+function sendWhatsApp(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let mobile = document.getElementById("mobile").value;
+    let type = document.getElementById("type").value;
+    let date = document.getElementById("date").value;
+    let msg = document.getElementById("message").value;
+
+    let text = `नमस्ते!%0Aनाम: ${name}%0Aमोबाइल: ${mobile}%0Aहवन: ${type}%0Aतारीख: ${date}%0Aसूचना: ${msg}`;
+
+    window.open(`https://wa.me/917999851859?text=${text}`, "_blank");
+}
+</script>
+
+</body>
+</html>
